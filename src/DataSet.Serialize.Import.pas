@@ -371,7 +371,7 @@ begin
         {$IF DEFINED(FPC)}
         if LJSONValue.AsString = EmptyStr then
         {$ELSE}
-        if (LJSONValue.Value = EmptyStr) and (not (LJSONValue.InheritsFrom(TJSONArray))) then
+        if (LJSONValue.Value = EmptyStr) and (not (LJSONValue.InheritsFrom(TJSONArray))) and (not (LJSONValue.InheritsFrom(TJSONObject))) then
         {$ENDIF}
         begin
           LField.Clear;
